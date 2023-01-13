@@ -1,0 +1,23 @@
+{{!-- hahahahaaa joke! click this button --}}
+
+{{!-- button disapears --}}
+
+{{!-- okay okay no joke --}}
+
+{{!-- button leads to /login --}}
+
+
+<div class="menu-container">
+  <div class="card-header col-md-10">
+    <h2>hi Bill</h2>
+  </div>
+  <!-- For each dish in the array of dish objects, the following <div> will be rendered. -->
+  {{#each photo as |photo|}}
+    <div class="dish col-md-5">
+      <!-- We use dish.id instead of <od> and <li> elements. -->
+    <p> {{photo.id}} </p>
+    <p>{{photo.type}}</p>
+    <p>{{photo.image}}</p>
+    </div>
+  {{/each}}
+</div>
