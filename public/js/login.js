@@ -51,3 +51,23 @@ document
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
+
+
+
+  // section for scrolling images on login page
+  import Splide from '@splidejs/splide';
+
+
+  new Splide( '.splide' ).mount();
+  //left-side: soups
+  //<dynamic css scroller code>
+
+
+  //right-side: sandwiches
+  //<dynamic css scroller code>
+
+
+  // idea:  ~~~  hosting images on cloudinary using names that index by 1 so we can load them in for loop rather than seeding:
+  // for(i = 0; i < 20; i++)
+  // renderFunction(); (whatever the code is)
+  // `<img src="<url>/sample${i}"`
