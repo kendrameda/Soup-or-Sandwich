@@ -14,7 +14,7 @@ const photoData =
         image: "link"
     },
     {
-        type: 'soup',
+        type: 'salad',
         image: 'this is soup'
     },
 ];
