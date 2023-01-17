@@ -12,7 +12,11 @@ const photoData =
     {
         type: "sandwich",
         image: "link"
-    }
+    },
+    {
+        type: 'salad',
+        image: 'this is soup'
+    },
 ];
 
 module.exports = photoData;
