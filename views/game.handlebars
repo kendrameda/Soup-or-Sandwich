@@ -1,1 +1,22 @@
 {{!-- game screen --}}
+<p>This is game.handlebars</p>
+
+
+<div class="menu-container">
+  <div class="card-header col-md-10">
+    <h2>hi Kendra</h2>
+  </div>
+  <!-- For each dish in the array of dish objects, the following <div> will be rendered. -->
+  {{#each photo as |photo|}}
+    <div class="dish col-md-5">
+      <!-- We use dish.id instead of <od> and <li> elements. -->
+    <p> {{photo.id}} </p>
+    <img src={{photo.image}} alt="cloudinary image">
+    </div>
+  {{/each}}
+
+  <span id="my-template"></span>
+  <button class="btn btn-primary submit-results" type="button">Submit</button>
+</div>
+
+<script src="/js/game.js"></script>
