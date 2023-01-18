@@ -36,7 +36,7 @@ const submitResults = async (event) => {
     const randomScore = Math.floor(Math.random() * -100);
     alert(`Score: ${randomScore}\nAt least you finsihed the level. 😈 Loser 💖`);
     level++;
-    let prevScore = JSON.parse(localStorage.getItem('game')).score || 0;
+    let prevScore = JSON.parse(localStorage.getItem('game'))?.score || 0;
     let obj = {
         level: level,
         score: prevScore += randomScore
@@ -49,4 +49,6 @@ const submitResults = async (event) => {
 
   document
   .querySelector('.submit-results')
-  .addEventListener('button', submitResults);
+  .addEventListener('click', submitResults);
+
+submitResults();

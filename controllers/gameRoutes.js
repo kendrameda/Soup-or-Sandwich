@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Photo, User } = require('../models');
+<<<<<<< HEAD
 
 // /game
 // router.get('/', async (req, res) => {
@@ -20,6 +21,13 @@ const { Photo, User } = require('../models');
 // });
 
 router.get('/:type', async (req, res) => {
+=======
+// const level = require('../public/js/game');
+const withAuth = require('../utils/auth');
+
+// /game
+router.get('/', withAuth, async (req, res) => {
+>>>>>>> 4de57f1908daf86ff59c1ba95252c44101e46e4c
     console.log('---in gameroutes');
     try {
         const photoData = await Photo.findAll({
