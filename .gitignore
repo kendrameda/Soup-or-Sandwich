@@ -1,4 +1,5 @@
 node_modules
 .env
+.keys
 .DS_Store
 JUST EXAMPLES DELETE THIS

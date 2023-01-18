@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Photo, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
@@ -9,13 +10,14 @@ router.get('/', async (req, res) => {
         const photo = photoData.map((photo) => photo.get({ plain: true }));
 
         console.log(photo)
-        res.render('joke', {photo})
+        res.render('joke', { photo })
     } catch (err) {
         res.status(500).json(err);
         console.log(err);
     }
 });
 
+<<<<<<< HEAD
 router.get('/login', async (req, res) => {
     // If the user is already logged in, redirect the request to another route
     //   if (req.session.logged_in) {
@@ -45,17 +47,20 @@ router.get('/game', async (req, res) => {
             //   logged_in: req.session.logged_in 
         });
     } catch (err) {
-        res.status(500).json(err);
+        res.status(510).json(err);
     }
 });
 
 router.get('/highscore', async (req, res) => {
+=======
+router.get('/highscore', withAuth, async (req, res) => {
+>>>>>>> 4de57f1908daf86ff59c1ba95252c44101e46e4c
     try {
         const userData = await User.findAll();
         const user = userData.map((user) => user.get({ plain: true }));
 
         console.log(user)
-        res.render('highscore', {user})
+        res.render('highscore', { user })
     } catch (err) {
         res.status(500).json(err);
         console.log(err);

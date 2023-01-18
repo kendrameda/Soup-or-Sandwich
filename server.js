@@ -5,6 +5,13 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 // const helpers = require('./utils/helpers');
 
+const passportSetup = require('./config/passport-setup');
+const passport = require('passport');
+const mongoose = require('mongoose');
+const keys = require('./config/keys');
+const cookieSession = require('cookie-session')
+
+
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -30,6 +37,11 @@ const sess = {
   })
 };
 
+app.use(cookieSession({
+  // 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+  maxAge: 24 * 60 * 60 * 1000,
+  keys: [keys.session.cookieKey]
+}))
 
 app.use(session(sess));
 
@@ -40,6 +52,15 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// initialize passport for cookies
+app.use(passport.initialize());
+app.use(passport.session());
+
+//connect to mongodb
+mongoose.connect(keys.mongodb.dbURI, () => {
+  console.log('connected to mongodb');
+})
 
 app.use(routes);
 
