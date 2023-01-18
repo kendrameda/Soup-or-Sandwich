@@ -1,8 +1,13 @@
-const startBttn = document.querySelector('#start-button');
+console.log("--- im in the joke.js hihi")
 
-startBttn.addEventListener("click", function(event) {
-    event.preventDefault();
-    console.log(event);
-    console.log(event.target);
-    window.location.replace("localhost:3001/login");
+const startBttn = document.querySelectorAll('.start-button');
+
+startBttn.forEach(oneBtn => {
+    oneBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log(event);
+        console.log(event.target);
+        alert(`HAHA that's not the real game silly.\nYou have to login first.`);
+        window.location.replace("/auth/login");
+    })
 });
