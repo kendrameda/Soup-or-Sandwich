@@ -25,15 +25,19 @@
   <span id="my-template"></span>
 </div> --}}
 
+
+<!--  use as template.  variable will be image in the image src attrbute. -->
 <div class="game-container">
     <div class="col-md-4">
       <button type="button" class="btn btn-primary" id="start-button">
-       <img src="https://res.cloudinary.com/dijep6dqz/image/upload/v1673890632/sample.jpg"
-       style="width: 200px; height: 250px;">
+        <img src={{ image }} style="width: 200px; height: 250px;">
        </button>
     </div>
-    <div class="col-md-4"></div>
-    <button type="button" class="btn btn-primary" id="button"></button>
+    <div class="col-md-4">
+       <button type="button" class="btn btn-primary" id="start-button">
+        <img src={{ image }} style="width: 200px; height: 250px;">
+       </button>
+    </div>
     <div class="col-md-4"></div>
   </div>
 

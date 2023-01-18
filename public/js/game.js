@@ -14,8 +14,17 @@ const levelToType = () => {
         photoType = 'salad';
     } else {
         console.log('--- error: level not 1, 2, or 3');
-    }
+    };
+
+// fetch photos with photoType
+// call to database using photoRoute
+// return the response
+// const photoArr = res.json
+
+    return photoType;
 };
+
+
 
 levelToType();
 
@@ -41,5 +50,3 @@ const submitResults = async (event) => {
   document
   .querySelector('.submit-results')
   .addEventListener('button', submitResults);
-
-// module.exports=level;
