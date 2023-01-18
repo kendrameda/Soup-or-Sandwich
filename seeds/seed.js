@@ -9,10 +9,10 @@ const scoreData = require('./scoreData');
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
-    await User.bulkCreate(userData, {
-        individualHooks: true,
-        returning: true,
-    });
+    // await User.bulkCreate(userData, {
+    //     individualHooks: true,
+    //     returning: true,
+    // });
 
     await Photo.bulkCreate(photoData, {
         individualHooks: true,

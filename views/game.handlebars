@@ -1,22 +1,50 @@
-{{!-- game screen --}}
 <p>This is game.handlebars</p>
 
-
-<div class="menu-container">
-  <div class="card-header col-md-10">
-    <h2>hi Kendra</h2>
-  </div>
-  <!-- For each dish in the array of dish objects, the following <div> will be rendered. -->
-  {{#each photo as |photo|}}
-    <div class="dish col-md-5">
-      <!-- We use dish.id instead of <od> and <li> elements. -->
-    <p> {{photo.id}} </p>
-    <img src={{photo.image}} alt="cloudinary image">
+<!--  use as template.  variable will be image in the image src attrbute. -->
+<div class="game-container">
+  <div class="row">
+    <div class="col-md-4">
+      <button type="button" class="btn btn-primary" id="start-button">
+        <img src={{ photo.0.image }} style="width: 200px; height: 250px;">
+      </button>
     </div>
-  {{/each}}
-
-  <span id="my-template"></span>
-  <button class="btn btn-primary submit-results" type="button">Submit</button>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-primary" id="start-button">
+        <img src={{ photo.1.image }} style="width: 200px; height: 250px;">
+      </button>
+    </div>
+    <div class="col-md-4"><button type="button" class="btn btn-primary" id="start-button">
+        <img src={{ photo.2.image }} style="width: 200px; height: 250px;">
+      </button></div>
+  </div>
 </div>
 
-<script src="/js/game.js"></script>
+<div class="row">
+  <div class="col-md-4"><button type="button" class="btn btn-primary" id="start-button">
+      <img src={{ photo.3.image }} style="width: 200px; height: 250px;">
+    </button></div>
+  <div class="col-md-4"><button type="button" class="btn btn-primary" id="start-button">
+      <img src={{ photo.4.image }} style="width: 200px; height: 250px;">
+    </button></div>
+  <div class="col-md-4"><button type="button" class="btn btn-primary" id="start-button">
+      <img src={{ photo.5.image }} style="width: 200px; height: 250px;">
+    </button></div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-4"><button type="button" class="btn btn-primary" id="start-button">
+      <img src={{ photo.6.image }} style="width: 200px; height: 250px;">
+    </button></div>
+  <div class="col-md-4"><button type="button" class="btn btn-primary" id="start-button">
+      <img src={{ photo.7.image }} style="width: 200px; height: 250px;">
+    </button></div>
+  <div class="col-md-4"><button type="button" class="btn btn-primary" id="start-button">
+      <img src={{ photo.8.image }} style="width: 200px; height: 250px;">
+    </button></div>
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript" src="/js/game.js"></script>
