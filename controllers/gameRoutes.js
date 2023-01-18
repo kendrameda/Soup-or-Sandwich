@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const { Photo, User } = require('../models');
 // const level = require('../public/js/game');
+const withAuth = require('../utils/auth');
+
 // /game
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     console.log('---in gameroutes');
     // console.log(level);
     try {
