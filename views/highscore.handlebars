@@ -13,7 +13,7 @@
   <tbody>
     {{#each score}}
     <tr>
-      <th scope="row"> {{@index}}</th>
+      <th scope="row"> {{increment @index}}</th>
       <td>{{scoreName}}</td>
       <td>{{score}}</td>
       
@@ -22,3 +22,5 @@
 
   </tbody>
 </table>
+
+{{!-- <script src="/js/highscore.js"></script> --}}

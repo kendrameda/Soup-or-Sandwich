@@ -8,7 +8,7 @@ const withAuth = require('../utils/auth');
 router.get('/highscore', withAuth, async (req, res) => {
     try {
         const scoreData = await Score.findAll();
-        const score = scoreData.map((score) => score.get({ plain: true }));
+        const score = scoreData.map((score) => score.get({ plain: true })).sort((a,b) => (a.score < b.score) ? 1 : -1);
 
         console.log(score)
         res.render('highscore', { score })
