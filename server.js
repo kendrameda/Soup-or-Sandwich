@@ -8,7 +8,7 @@ const routes = require('./controllers');
 const passportSetup = require('./config/passport-setup');
 const passport = require('passport');
 const mongoose = require('mongoose');
-const cookieSession = require('cookie-session')
+// const cookieSession = require('cookie-session')
 
 
 const sequelize = require('./config/connection');
@@ -31,16 +31,21 @@ const sess = {
   },
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
+  // store: new SequelizeStore({
+  //   db: sequelize
+  // })
 };
 
-app.use(cookieSession({
-  // 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
-  maxAge: 24 * 60 * 60 * 1000,
-  keys: [process.env.COOKIEKEY]
-}))
+app.use((req, res, next) => {
+  console.log(`--- ${req.method} request received on endpoint ${req.url}`);
+  next();
+})
+
+// app.use(cookieSession({
+//   // 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+//   maxAge: 24 * 60 * 60 * 1000,
+//   keys: [process.env.COOKIEKEY]
+// }))
 
 app.use(session(sess));
 
