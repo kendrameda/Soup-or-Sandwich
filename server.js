@@ -8,7 +8,6 @@ const routes = require('./controllers');
 const passportSetup = require('./config/passport-setup');
 const passport = require('passport');
 const mongoose = require('mongoose');
-const keys = require('./config/keys');
 const cookieSession = require('cookie-session')
 
 
@@ -40,7 +39,7 @@ const sess = {
 app.use(cookieSession({
   // 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
   maxAge: 24 * 60 * 60 * 1000,
-  keys: [keys.session.cookieKey]
+  keys: [process.env.COOKIEKEY]
 }))
 
 app.use(session(sess));
@@ -58,7 +57,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //connect to mongodb
-mongoose.connect(keys.mongodb.dbURI, () => {
+mongoose.connect(process.env.MONGODB, () => {
   console.log('connected to mongodb');
 })
 
