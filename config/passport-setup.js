@@ -19,7 +19,8 @@ passport.use(
         // options for the strategy
         callbackURL: '/auth/google/redirect',
         clientID: process.env.GCLIENTID,
-        clientSecret: process.env.GCLIENTSECRET
+        clientSecret: process.env.GCLIENTSECRET,
+        scope: ['profile']
     }, (accessToken, refreshToken, profile, done) => {
         // passport callback function
 
@@ -27,7 +28,7 @@ passport.use(
         User.findOne({ googleId: profile.id }).then((currentUser) => {
             if (currentUser) {
                 // already have the user
-                console.log('user is: ', currentUser);
+                console.log('--- user is: ', currentUser);
                 done(null, currentUser);
             } else {
                 // if not, create user in our db
