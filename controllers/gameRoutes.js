@@ -2,9 +2,6 @@ const router = require('express').Router();
 const { Photo, Score} = require('../models');
 const withAuth = require('../utils/auth');
 
-// add withauth back in !!!!!!!!!!!!!!!!!!!
-// /game
-
 router.get('/highscore', withAuth, async (req, res) => {
     try {
         const scoreData = await Score.findAll();
@@ -18,7 +15,7 @@ router.get('/highscore', withAuth, async (req, res) => {
     }
 });
 
-router.get('/:type', async (req, res) => {
+router.get('/:type', withAuth, async (req, res) => {
     console.log('---in gameroutes');
     try {
         const photoData = await Photo.findAll({
