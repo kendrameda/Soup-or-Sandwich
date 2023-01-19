@@ -7,7 +7,8 @@ const authRoutes = require('./auth-routes');
 
 router.use('/api', apiRoutes);
 router.use('/game', gameRoutes);
-router.use('/', homeRoutes);
 router.use('/auth', authRoutes);
+router.use('/', homeRoutes);
+
 
 module.exports = router;

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Photo, User } = require('../models');
+const { Photo} = require('../models');
 const withAuth = require('../utils/auth');
 
 // add withauth back in !!!!!!!!!!!!!!!!!!!
