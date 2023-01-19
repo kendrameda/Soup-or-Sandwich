@@ -23,4 +23,23 @@
   </tbody>
 </table>
 
+
+<button class="elevator-button">Take the elevator</button>
+
+<script src="/js/elevator.js"></script>
+<script>
+  window.onload = function() {
+  var elevator = new Elevator({
+    element: document.querySelector('.elevator-button'),
+    mainAudio: '/assets/demo_music_elevator.mp3',
+    endAudio: '/assets/demo_music_ding.mp3'
+  });
+  var button = document.querySelector('.elevator-button');
+  button.addEventListener('click', function () {
+    elevator.elevate();
+  });
+  }
+</script>
+
 {{!-- <script src="/js/highscore.js"></script> --}}
+
