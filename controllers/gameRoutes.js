@@ -1,9 +1,23 @@
 const router = require('express').Router();
-const { Photo} = require('../models');
+const { Photo, Score} = require('../models');
 const withAuth = require('../utils/auth');
 
 // add withauth back in !!!!!!!!!!!!!!!!!!!
 // /game
+
+router.get('/highscore', withAuth, async (req, res) => {
+    try {
+        const scoreData = await Score.findAll();
+        const score = scoreData.map((score) => score.get({ plain: true })).sort((a,b) => (a.score < b.score) ? 1 : -1);
+
+        console.log(score)
+        res.render('highscore', { score })
+    } catch (err) {
+        res.status(500).json(err);
+        console.log(err);
+    }
+});
+
 router.get('/:type', async (req, res) => {
     console.log('---in gameroutes');
     try {
@@ -20,5 +34,7 @@ router.get('/:type', async (req, res) => {
         console.log(err);
     }
 });
+
+
 
 module.exports = router;

@@ -1,115 +1,115 @@
 const scoreData =
 [
     {
-        scoreName: 'Marc',
+        scoreName: 'Aronson333',
         score: '243'
     },
     {
-        scoreName: 'Bill',
+        scoreName: 'gnrt',
         score: '113'
     },
     {
-        scoreName: 'Azime',
+        scoreName: 'azimezn',
         score: '455'
     },
     {
-        scoreName: 'Kendra',
+        scoreName: 'kendrameda',
         score: '665'
     },
     {
-        scoreName: 'Tom',
+        scoreName: 'Kice',
         score: '12'
     },
     {
-        scoreName: 'Joe',
+        scoreName: 'joes9966',
         score: '93'
     },
     {
-        scoreName: 'Stephanie',
+        scoreName: 'jopels',
         score: '18'
     },
     {
-        scoreName: 'Lola',
+        scoreName: 'tellehcim',
         score: '2'
     },
     {
-        scoreName: 'Thomas',
+        scoreName: 'slerner',
         score: '93'
     },
     {
-        scoreName: 'Megan',
+        scoreName: 'vizzini',
         score: '178'
     },
     {
-        scoreName: 'Brett',
+        scoreName: 'Himothy "Him" Himson',
         score: '100'
     },
     {
-        scoreName: 'Cole',
+        scoreName: 'connor botone',
         score: '69'
     },
     {
-        scoreName: 'Dylan',
+        scoreName: 'J1',
         score: '169'
     },
     {
-        scoreName: 'Richard',
+        scoreName: 'zander',
         score: '130'
     },
     {
-        scoreName: 'Rob',
+        scoreName: 'Jin',
         score: '72'
     },
     {
-        scoreName: 'Susan',
+        scoreName: 'mason66xue',
         score: '89'
     },
     {
-        scoreName: 'Harry',
+        scoreName: 'meek',
         score: '51'
     },
     {
-        scoreName: 'Flora',
+        scoreName: 'pmorris',
         score: '157'
     },
     {
-        scoreName: 'Summer',
+        scoreName: 'tboneirl',
         score: '163'
     },
     {
-        scoreName: 'Kai',
+        scoreName: 'two4onebill',
         score: '99'
     },
     {
-        scoreName: 'Eduardo',
+        scoreName: 'val-gee',
         score: '199'
     },
     {
-        scoreName: 'Shane',
+        scoreName: 'yungbeniceo',
         score: '43'
     },
     {
-        scoreName: 'Amir',
+        scoreName: 'BlanketHero',
         score: '235'
     },
     {
-        scoreName: 'Aliyah',
+        scoreName: 'jennahopeclem',
         score: '178'
     },
     {
-        scoreName: 'Drew',
+        scoreName: 'Skywise',
         score: '217'
     },
     {
-        scoreName: 'Felix',
+        scoreName: 'SkullFullofBooks',
         score: '217'
     },
     {
-        scoreName: 'Kamari',
+        scoreName: 'Candyslab',
         score: '59'
     },
     {
-        scoreName: 'Jerry',
+        scoreName: 'DailieesWin',
         score: '62'
     },
     {
@@ -117,39 +117,39 @@ const scoreData =
         score: '47'
     },
     {
-        scoreName: 'Thaddeus',
+        scoreName: 'Zeroomic',
         score: '53'
     },
     {
-        scoreName: 'Rosie',
+        scoreName: 'Mimsbee',
         score: '98'
     },
     {
-        scoreName: 'Quinn',
+        scoreName: 'skunkylong',
         score: '128'
     },
     {
-        scoreName: 'Porter',
+        scoreName: 'Bankston',
         score: '63'
     },
     {
-        scoreName: 'Leia',
+        scoreName: 'FluorescentZebra',
         score: '111'
     },
     {
-        scoreName: 'Foster',
+        scoreName: 'BartbWalk',
         score: '149'
     },
     {
-        scoreName: 'Gwen',
+        scoreName: 'Edowen',
         score: '89'
     },
     {
-        scoreName: 'Kyree',
+        scoreName: 'anAngyNoodle',
         score: '61'
     },
     {
-        scoreName: 'Baylee',
+        scoreName: 'GothBoxer',
         score: '77'
     },
     {
@@ -157,47 +157,47 @@ const scoreData =
         score: '97'
     },
     {
-        scoreName: 'Thaddeus',
+        scoreName: 'spoopysam',
         score: '131'
     },
     {
-        scoreName: 'Caroline',
+        scoreName: 'NebulaExorcism',
         score: '42'
     },
     {
-        scoreName: 'Araceli',
+        scoreName: 'angryShroomish',
         score: '142'
     },
     {
-        scoreName: 'Dexter',
+        scoreName: 'hullaBALOO',
         score: '67'
     },
     {
-        scoreName: 'Sloan',
+        scoreName: 'Dagooray',
         score: '93'
     },
     {
-        scoreName: 'Trenton',
+        scoreName: 'CerbeusStyle',
         score: '102'
     },
     {
-        scoreName: 'Crystal',
+        scoreName: 'StarBones',
         score: '34'
     },
     {
-        scoreName: 'Josie',
+        scoreName: 'Mushy',
         score: '117'
     },
     {
-        scoreName: 'Murphy',
+        scoreName: 'ibai',
         score: '7'
     },
     {
-        scoreName: 'Camryn',
+        scoreName: 'biyin',
         score: '15'
     },
     {
-        scoreName: 'Iris',
+        scoreName: 'Fishbits',
         score: '122'
     },
 

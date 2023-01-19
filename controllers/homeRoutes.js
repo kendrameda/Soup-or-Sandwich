@@ -45,17 +45,17 @@ router.get('/', async (req, res) => {
 // });
 
 
-router.get('/highscore', withAuth, async (req, res) => {
-    try {
-        const scoreData = await Score.findAll();
-        const score = scoreData.map((score) => score.get({ plain: true }));
+// router.get('/game/highscore', withAuth, async (req, res) => {
+//     try {
+//         const scoreData = await Score.findAll();
+//         const score = scoreData.map((score) => score.get({ plain: true }));
 
-        console.log(score)
-        res.render('highscore', { score })
-    } catch (err) {
-        res.status(500).json(err);
-        console.log(err);
-    }
-});
+//         console.log(score)
+//         res.render('highscore', { score })
+//     } catch (err) {
+//         res.status(500).json(err);
+//         console.log(err);
+//     }
+// });
 
 module.exports = router;
