@@ -45,7 +45,7 @@ router.get('/', async (req, res) => {
 // });
 
 
-router.get('/highscore', withAuth, async (req, res) => {
+router.get('/game/highscore', withAuth, async (req, res) => {
     try {
         const scoreData = await Score.findAll();
         const score = scoreData.map((score) => score.get({ plain: true }));

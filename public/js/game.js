@@ -1,5 +1,5 @@
 let level = 0;
-console.log('asdfas');
+console.log('--- game.js is running');
 const levelToType = () => {
     console.log('---im in level to type function');
     level = JSON.parse(localStorage.getItem('game'))?.level || 1;
@@ -12,6 +12,8 @@ const levelToType = () => {
         photoType = 'sandwich';
     } else if (level == 3){
         photoType = 'salad';
+    } else if (level == 4) {
+        photoType = 'highscore';
     } else {
         console.log('--- error: level not 1, 2, or 3');
     };
@@ -34,15 +36,22 @@ const submitResults = async (event) => {
     console.log(level);
   
     const randomScore = Math.floor(Math.random() * -100);
-    alert(`Score: ${randomScore}\nAt least you finsihed the level. 😈 Loser 💖`);
-    level++;
+    if(level < 4) {
+        alert(`Score: ${randomScore}\nAt least you finsihed the level. 😈 Loser 💖`);
+        level++; 
+    } else {
+        level = 0;
+    }
+    
     let prevScore = JSON.parse(localStorage.getItem('game'))?.score || 0;
     let obj = {
         level: level,
         score: prevScore += randomScore
     }
+    console.log(obj);
     localStorage.setItem('game', JSON.stringify(obj));
-    levelToType();
+
+    window.location.replace(`/game/${levelToType()}`)
     
     
   };
