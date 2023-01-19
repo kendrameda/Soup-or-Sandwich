@@ -14,6 +14,7 @@ const levelToType = () => {
         photoType = 'salad';
     } else if (level == 4) {
         photoType = 'highscore';
+        level = 1;
     } else {
         console.log('--- error: level not 1, 2, or 3');
     };
@@ -36,12 +37,14 @@ const submitResults = async (event) => {
     console.log(level);
   
     const randomScore = Math.floor(Math.random() * -100);
-    if(level < 4) {
-        alert(`Score: ${randomScore}\nAt least you finsihed the level. 😈 Loser 💖`);
-        level++; 
-    } else {
-        level = 0;
-    }
+
+    alert(`Score: ${randomScore}\nAt least you finsihed the level. 😈 Loser 💖`);
+    
+    level++; 
+    // if(level > 3) {
+    //     level -= 4;
+    //     window.location.replace(`/game/highscore`);
+    // };
     
     let prevScore = JSON.parse(localStorage.getItem('game'))?.score || 0;
     let obj = {
