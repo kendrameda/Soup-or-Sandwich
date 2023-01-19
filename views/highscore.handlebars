@@ -6,16 +6,16 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col"> name </th>
-      <th scope="col"> score </th>
+      <th scope="col"> Your real, accurate IQ </th>
       {{!-- <th scope="col">{{facebook}}</th> --}}
     </tr>
   </thead>
   <tbody>
-    {{#each user}}
+    {{#each score}}
     <tr>
       <th scope="row"> {{@index}}</th>
-      <td>{{name}}</td>
-      <td>{{highScore}}</td>
+      <td>{{scoreName}}</td>
+      <td>{{score}}</td>
       
     </tr>
     {{/each}}

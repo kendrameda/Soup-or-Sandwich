@@ -51,4 +51,4 @@ const submitResults = async (event) => {
   .querySelector('.submit-results')
   .addEventListener('click', submitResults);
 
-submitResults();
+// submitResults();
