@@ -1,8 +1,10 @@
 let level = 0;
+let prevScore = 0;
 console.log('--- game.js is running');
 const levelToType = () => {
     console.log('---im in level to type function');
     level = JSON.parse(localStorage.getItem('game'))?.level || 1;
+    prevScore = JSON.parse(localStorage.getItem('game'))?.prevScore || 0;
     console.log('---level: ', level);
     let photoType;
 
@@ -15,6 +17,7 @@ const levelToType = () => {
     } else if (level == 4) {
         photoType = 'highscore';
         level = 1;
+        prevScore = 0;
     } else {
         console.log('--- error: level not 1, 2, or 3');
     };
@@ -46,7 +49,7 @@ const submitResults = async (event) => {
     //     window.location.replace(`/game/highscore`);
     // };
     
-    let prevScore = JSON.parse(localStorage.getItem('game'))?.score || 0;
+    prevScore = JSON.parse(localStorage.getItem('game'))?.score || 0;
     let obj = {
         level: level,
         score: prevScore += randomScore
