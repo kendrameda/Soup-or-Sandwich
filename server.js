@@ -7,9 +7,8 @@ const routes = require('./controllers');
 
 const passportSetup = require('./config/passport-setup');
 const passport = require('passport');
-const mongoose = require('mongoose');
-const keys = require('./config/keys');
-const cookieSession = require('cookie-session')
+// const mongoose = require('mongoose');
+// const cookieSession = require('cookie-session')
 
 
 const sequelize = require('./config/connection');
@@ -32,16 +31,21 @@ const sess = {
   },
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
+  // store: new SequelizeStore({
+  //   db: sequelize
+  // })
 };
 
-app.use(cookieSession({
-  // 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
-  maxAge: 24 * 60 * 60 * 1000,
-  keys: [keys.session.cookieKey]
-}))
+app.use((req, res, next) => {
+  console.log(`--- ${req.method} request received on endpoint ${req.url}`);
+  next();
+})
+
+// app.use(cookieSession({
+//   // 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+//   maxAge: 24 * 60 * 60 * 1000,
+//   keys: [process.env.COOKIEKEY]
+// }))
 
 app.use(session(sess));
 
@@ -58,12 +62,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //connect to mongodb
-mongoose.connect(keys.mongodb.dbURI, () => {
-  console.log('connected to mongodb');
-})
+// mongoose.connect(process.env.MONGODB, () => {
+//   console.log('connected to mongodb');
+// })
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });

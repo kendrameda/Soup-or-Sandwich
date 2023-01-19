@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/game', async (req, res) => {
+router.get('/game', withAuth, async (req, res) => {
     try {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
@@ -24,10 +24,10 @@ router.get('/game', async (req, res) => {
             // include: [{ model: Project }], - !!! include scores?
         });
         const user = userData.get({ plain: true });
-        console.log(user);
+        console.log("--- user: ", user);
 
         const photoData = await Photo.findAll();
-        console.log(photoData);
+        console.log("--- photoData: ", photoData);
 
         // Pass serialized data and session flag into template
         res.render('game', {
