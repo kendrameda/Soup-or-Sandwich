@@ -7,7 +7,7 @@ const routes = require('./controllers');
 
 const passportSetup = require('./config/passport-setup');
 const passport = require('passport');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 // const cookieSession = require('cookie-session')
 
 
@@ -62,12 +62,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //connect to mongodb
-mongoose.connect(process.env.MONGODB, () => {
-  console.log('connected to mongodb');
-})
+// mongoose.connect(process.env.MONGODB, () => {
+//   console.log('connected to mongodb');
+// })
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
