@@ -14,7 +14,7 @@ const levelToType = () => {
     } else if (level == 3) {
         photoType = 'salad';
     } else if (level == 4) {
-        let scoreName = prompt('Enter a username to save your lowsco- Imean your highscore');
+        let scoreName = prompt('Enter a username to save your lowsco- I mean your highscore');
         
         const loadScore = async (req, res) => {
             await fetch('/api/highscore', {
