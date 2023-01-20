@@ -3,7 +3,8 @@ let prevScore = 0;
 
 const levelToType = () => {
     level = JSON.parse(localStorage.getItem('game'))?.level || 1;
-    prevScore = JSON.parse(localStorage.getItem('game'))?.score || 0;
+    score = JSON.parse(localStorage.getItem('game'))?.highScore || 0;
+    console.log('---level: ', level);
     let photoType;
 
     if (level == 1) {
@@ -13,9 +14,23 @@ const levelToType = () => {
     } else if (level == 3) {
         photoType = 'salad';
     } else if (level == 4) {
+        let scoreName = prompt('Enter a usernamee to save your lowsco- Imean your highscore');
+        
+        const loadScore = async (req, res) => {
+            await fetch('/api/highscore', {
+            method: 'POST',
+            body: JSON.stringify({ scoreName, score }),
+            headers: { 'Content-Type': 'application/json' },
+          });}
+        loadScore();
+        
         photoType = 'highscore';
-        level = 1;
-        prevScore = 0;
+        let obj = {
+            level: 1,
+            score: 0
+        };
+        localStorage.setItem('game', JSON.stringify(obj))
+
     } else {
         console.log('--- error: level not 1, 2, or 3');
     };
@@ -27,8 +42,6 @@ const levelToType = () => {
 
     return photoType;
 };
-
-
 
 levelToType();
 
@@ -47,14 +60,17 @@ const submitResults = async (event) => {
 
     let obj = {
         level: level,
-        score: prevScore += randomScore
+        highScore: score += randomScore
     }
     console.log(obj);
     localStorage.setItem('game', JSON.stringify(obj));
 
-    window.location.replace(`/game/${levelToType()}`)
+    let highScore = await levelToType();
+    window.location.replace(`/game/${highScore}`)
+    
+    
+  };
 
-};
 
 const randomAlert = () => {
     const messages = ["Are you sure???", "Think again.", "Looks weird to me.", "HAHAHAHA"];
