@@ -5,8 +5,8 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
-const passportSetup = require('./config/passport-setup');
-const passport = require('passport');
+const passport = require('./config/passport-setup');
+// const passport = require('passport');
 // const mongoose = require('mongoose');
 // const cookieSession = require('cookie-session')
 

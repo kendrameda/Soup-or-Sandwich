@@ -14,7 +14,7 @@ const levelToType = () => {
     } else if (level == 3) {
         photoType = 'salad';
     } else if (level == 4) {
-        let scoreName = prompt('Enter a usernamee to save your lowsco- Imean your highscore');
+        let scoreName = prompt('Enter a username to save your lowsco- Imean your highscore');
         
         const loadScore = async (req, res) => {
             await fetch('/api/highscore', {
@@ -66,12 +66,28 @@ const submitResults = async (event) => {
     localStorage.setItem('game', JSON.stringify(obj));
 
     let highScore = await levelToType();
-    window.location.replace(`/game/${highScore}`)
+
+    changePage = setTimeout(() => {
+        window.location.replace(`/game/${highScore}`)    
+    }, 1000);
+    
     
     
   };
 
-const randomAlert = () => {
+const randomAlert = (event) => {
+
+    // change button color on highlight
+    console.log(event.currentTarget);
+    if(event.currentTarget.classList.contains('btn-primary')){
+        event.currentTarget.classList.remove('btn-primary');
+        event.currentTarget.classList.add('btn-secondary');
+    } else {
+        event.currentTarget.classList.remove('btn-secondary');
+        event.currentTarget.classList.add('btn-primary');
+    };
+
+    // mess with peoples heads
     const messages = ["Are you sure???", "Think again.", "Looks weird to me.", "HAHAHAHA", "look behind you", `that doesn't look like ${levelToType()}`, "Is that your final decision?", "Do you not want to take more time to think it over?", `${levelToType()} just ain't your bag, baby`, "EXTERMINATE", "Maybe your score will go up after this one", "Is that... is that you?... Paul?", "don't blink", "Manolis was here... I wish =(", "IN YOUR FACE haha idk what I'm doing with my life", "click submit hot shot", `looks like you know your ${levelToType()}`, "the cake is a lie"];
     const randomIndex = Math.floor(Math.random() * messages.length);
     const randomMessage = messages[randomIndex];
