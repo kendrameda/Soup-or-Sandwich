@@ -14,7 +14,7 @@ const levelToType = () => {
     } else if (level == 3) {
         photoType = 'salad';
     } else if (level == 4) {
-        let scoreName = prompt('Enter a usernamee to save your lowsco- Imean your highscore');
+        let scoreName = prompt('Enter a username to save your lowsco- Imean your highscore');
         
         const loadScore = async (req, res) => {
             await fetch('/api/highscore', {
@@ -66,7 +66,11 @@ const submitResults = async (event) => {
     localStorage.setItem('game', JSON.stringify(obj));
 
     let highScore = await levelToType();
-    window.location.replace(`/game/${highScore}`)
+
+    changePage = setTimeout(() => {
+        window.location.replace(`/game/${highScore}`)    
+    }, 1000);
+    
     
     
   };
