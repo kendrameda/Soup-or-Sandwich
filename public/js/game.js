@@ -77,6 +77,20 @@ const submitResults = async (event) => {
 
 
 const randomAlert = () => {
+    // change button color on highlight
+    console.log(event.currentTarget);
+    if(event.currentTarget.classList.contains('btn-primary')){
+        event.currentTarget.classList.remove('btn-primary');
+        event.currentTarget.classList.add('btn-secondary');
+    } else {
+        event.currentTarget.classList.remove('btn-secondary');
+        event.currentTarget.classList.add('btn-primary');
+    };
+
+
+    
+
+    // mess with peoples heads
     const messages = ["Are you sure???", "Think again.", "Looks weird to me.", "HAHAHAHA"];
     const randomIndex = Math.floor(Math.random() * messages.length);
     const randomMessage = messages[randomIndex];
