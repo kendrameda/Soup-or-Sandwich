@@ -71,9 +71,8 @@ const submitResults = async (event) => {
     
   };
 
-
 const randomAlert = () => {
-    const messages = ["Are you sure???", "Think again.", "Looks weird to me.", "HAHAHAHA"];
+    const messages = ["Are you sure???", "Think again.", "Looks weird to me.", "HAHAHAHA", "look behind you", `that doesn't look like ${levelToType()}`, "Is that your final decision?", "Do you not want to take more time to think it over?", `${levelToType()} just ain't your bag, baby`, "EXTERMINATE", "Maybe your score will go up after this one", "Is that... is that you?... Paul?", "don't blink", "Manolis was here... I wish =(", "IN YOUR FACE haha idk what I'm doing with my life", "click submit hot shot", `looks like you know your ${levelToType()}`, "the cake is a lie"];
     const randomIndex = Math.floor(Math.random() * messages.length);
     const randomMessage = messages[randomIndex];
     if (Math.random() < 0.6) {
