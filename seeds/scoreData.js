@@ -30,7 +30,7 @@ const scoreData =
     },
     {
         scoreName: 'tellehcim',
-        score: '2'
+        score: '32'
     },
     {
         scoreName: 'slerner',
@@ -54,7 +54,7 @@ const scoreData =
     },
     {
         scoreName: 'zander',
-        score: '130'
+        score: '214'
     },
     {
         scoreName: 'Jin',
@@ -126,7 +126,7 @@ const scoreData =
     },
     {
         scoreName: 'skunkylong',
-        score: '128'
+        score: '12'
     },
     {
         scoreName: 'Bankston',
@@ -158,7 +158,7 @@ const scoreData =
     },
     {
         scoreName: 'spoopysam',
-        score: '131'
+        score: '43'
     },
     {
         scoreName: 'NebulaExorcism',
@@ -199,6 +199,110 @@ const scoreData =
     {
         scoreName: 'Fishbits',
         score: '122'
+    },
+    {
+        scoreName: 'PaultheTA',
+        score: '231'
+    },
+    {
+        scoreName: 'JustyntheTA',
+        score: '227'
+    },
+    {
+        scoreName: 'the',
+        score: '136'
+    },
+    {
+        scoreName: 'neighborly',
+        score: '135'
+    },
+    {
+        scoreName: 'clown',
+        score: '134'
+    },
+    {
+        scoreName: 'peeks',
+        score: '133'
+    },
+    {
+        scoreName: 'through',
+        score: '132'
+    },
+    {
+        scoreName: 'your',
+        score: '131'
+    },
+    {
+        scoreName: 'window',
+        score: '130'
+    },
+    {
+        scoreName: 'also',
+        score: '129'
+    },
+    {
+        scoreName: 'btw',
+        score: '128'
+    },
+    {
+        scoreName: 'did',
+        score: '127'
+    },
+    {
+        scoreName: 'you',
+        score: '126'
+    },
+    {
+        scoreName: 'look',
+        score: '125'
+    },
+    {
+        scoreName: 'behind',
+        score: '124'
+    },
+    {
+        scoreName: 'you',
+        score: '123'
+    },
+    {
+        scoreName: 'HappierCow',
+        score: '30'
+    },
+    {
+        scoreName: 'MeothxXlimitXx',
+        score: '-230'
+    },
+    {
+        scoreName: 'CristianoFan07',
+        score: '135'
+    },
+    {
+        scoreName: 'DigiridooGoodInTheWorld',
+        score: '-93'
+    },
+    {
+        scoreName: 'Stylinx9Trixx',
+        score: '-102'
+    },
+    {
+        scoreName: 'SSX Tha_gawd 1000',
+        score: '-75'
+    },
+    {
+        scoreName: 'ThePokemonFromDetectivePikachu',
+        score: '165'
+    },
+    {
+        scoreName: 'NotActuallyKimKardashian',
+        score: '-108'
+    },
+    {
+        scoreName: 'ActuallyKimKardashian',
+        score: '1'
+    },
+    {
+        scoreName: 'BigYeezyAdida',
+        score: '-9'
     },
 
 ];
