@@ -41,12 +41,6 @@ app.use((req, res, next) => {
   next();
 })
 
-// app.use(cookieSession({
-//   // 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
-//   maxAge: 24 * 60 * 60 * 1000,
-//   keys: [process.env.COOKIEKEY]
-// }))
-
 app.use(session(sess));
 
 // Inform Express.js on which template engine to use
@@ -61,11 +55,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // initialize passport for cookies
 app.use(passport.initialize());
 app.use(passport.session());
-
-//connect to mongodb
-// mongoose.connect(process.env.MONGODB, () => {
-//   console.log('connected to mongodb');
-// })
 
 app.use(routes);
 
