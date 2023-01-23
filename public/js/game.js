@@ -4,7 +4,6 @@ let prevScore = 0;
 const levelToType = () => {
     level = JSON.parse(localStorage.getItem('game'))?.level || 1;
     score = JSON.parse(localStorage.getItem('game'))?.highScore || 0;
-    console.log('---level: ', level);
     let photoType;
 
     if (level == 1) {
@@ -35,11 +34,6 @@ const levelToType = () => {
         console.log('--- error: level not 1, 2, or 3');
     };
 
-    // fetch photos with photoType
-    // call to database using photoRoute
-    // return the response
-    // const photoArr = res.json
-
     return photoType;
 };
 
@@ -53,10 +47,6 @@ const submitResults = async (event) => {
     alert(`Score: ${randomScore}\nAt least you finsihed the level. 😈 Loser 💖`);
 
     level++;
-    // if(level > 3) {
-    //     level -= 4;
-    //     window.location.replace(`/game/highscore`);
-    // };
 
     let obj = {
         level: level,
