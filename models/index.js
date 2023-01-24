@@ -1,6 +1,6 @@
 const User = require('./User');
 const Photo = require("./Photo")
-const Score = require('./score');
+const score = require('./score');
 
 // User.hasMany(Project, {
 //   foreignKey: 'user_id',
@@ -11,4 +11,4 @@ const Score = require('./score');
 //   foreignKey: 'user_id'
 // });
 
-module.exports = { User, Photo, Score };
+module.exports = { User, Photo, score };

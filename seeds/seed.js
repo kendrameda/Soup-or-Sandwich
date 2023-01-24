@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 const Photo = require('../models/Photo');
 const photoData = require('./photoData');
-const Score = require('../models/Score');
+const score = require('../models/score');
 const scoreData = require('./scoreData');
 
 const seedDatabase = async () => {
@@ -12,7 +12,7 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    await Score.bulkCreate(scoreData, {
+    await score.bulkCreate(scoreData, {
         individualHooks: true,
         returning: true,
     });
